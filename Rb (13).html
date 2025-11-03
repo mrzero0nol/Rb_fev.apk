@@ -195,7 +195,12 @@
   .counts{margin-top:12px; color:var(--muted); font-size:14px; text-align:center;}
   .paging-controls button { padding: 8px 12px; font-size: 13px; }
 
-  .badges{display:flex; gap:16px; flex-wrap:nowrap; align-items: center; justify-content: center; margin-bottom: 16px;}
+  .badges{display:flex; gap:16px; flex-wrap:nowrap; align-items: center; justify-content: space-between; margin-bottom: 16px;}
+  @media (max-width: 600px) {
+    .badges {
+      justify-content: center;
+    }
+  }
   .pill{
     display: inline-block;
     font-size: 13px;
@@ -207,10 +212,7 @@
     color: var(--muted);
     vertical-align: middle; /* Ensure alignment */
   }
-  .pill#pillTotal {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
+  .pill#pillTotal,
   .pill#pillSelected {
     background: var(--accent);
     border-color: var(--accent);
@@ -549,7 +551,7 @@
     </button>
 
     <div class="panel">
-      <div class="badges" style="justify-content: space-between; align-items:center; margin-bottom: 16px;">
+      <div class="badges">
         <span class="pill" id="pillTotal">Total: 0</span>
         <button id="addCustomProxyBtn" class="secondary" style="padding: 6px 12px; font-size: 13px;">Add Custom Proxy</button>
         <span class="pill" id="pillSelected">Selected: 0</span>
